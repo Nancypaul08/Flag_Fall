@@ -4,6 +4,14 @@ FlagFall is a beginner-friendly cybersecurity treasure hunt game for students le
 
 Players search for flags instead of coins, submit each flag, earn points, and pass levels.
 
+## Features
+
+- Eye-gaze guide whose pupils follow the cursor
+- Treasure map with 5 flag checkpoints
+- Live score, rank, solved count, and vault progress
+- Browser-saved progress with local storage
+- Hints for beginner-friendly learning
+
 ## Project Structure
 
 - `index.html` - main game page

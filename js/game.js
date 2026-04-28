@@ -174,11 +174,44 @@
       const score = getScore();
       const solved = progress.solved.length;
       const solvedText = `${solved}/${levels.length}`;
+      const percent = Math.round((solved / levels.length) * 100);
       document.getElementById("score").textContent = score;
       document.getElementById("heroScore").textContent = score;
       document.getElementById("solved").textContent = solvedText;
       document.getElementById("heroSolved").textContent = solvedText;
       document.getElementById("rank").textContent = getRank(score);
+      document.getElementById("treasurePercent").textContent = `${percent}%`;
+      document.getElementById("treasureStatus").textContent = solved === levels.length
+        ? "Vault unlocked: all flags captured."
+        : `Vault sealed: capture ${levels.length - solved} more flag${levels.length - solved === 1 ? "" : "s"}.`;
+      updateTreasureMap();
+    }
+
+    function updateTreasureMap() {
+      document.querySelectorAll("[data-map-node]").forEach(node => {
+        node.classList.toggle("is-solved", progress.solved.includes(node.dataset.mapNode));
+      });
+    }
+
+    function initEyeGaze() {
+      const pupils = document.querySelectorAll(".pupil");
+      if (!pupils.length) return;
+
+      window.addEventListener("pointermove", event => {
+        pupils.forEach(pupil => {
+          const eye = pupil.parentElement;
+          const rect = eye.getBoundingClientRect();
+          const eyeX = rect.left + rect.width / 2;
+          const eyeY = rect.top + rect.height / 2;
+          const angle = Math.atan2(event.clientY - eyeY, event.clientX - eyeX);
+          const distance = Math.min(12, Math.hypot(event.clientX - eyeX, event.clientY - eyeY) / 12);
+          const x = Math.cos(angle) * distance;
+          const y = Math.sin(angle) * distance;
+
+          pupil.style.setProperty("--eye-x", `${x}px`);
+          pupil.style.setProperty("--eye-y", `${y}px`);
+        });
+      });
     }
 
     function addTerminalLine(text, success) {
@@ -209,3 +242,4 @@
 
     renderLevels();
     updateStats();
+    initEyeGaze();

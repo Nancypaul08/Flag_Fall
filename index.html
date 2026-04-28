@@ -60,14 +60,27 @@
           <span>// treasure_map.ctf</span>
           <span>status: live</span>
         </div>
+        <div class="watcher" aria-label="Cyber owl eye gaze guide">
+          <div class="watcher-label">guide.exe</div>
+          <div class="eyes" aria-hidden="true">
+            <div class="eye"><span class="pupil"></span></div>
+            <div class="eye"><span class="pupil"></span></div>
+          </div>
+          <div class="watcher-mouth"></div>
+        </div>
         <div class="route" aria-hidden="true">
           <svg viewBox="0 0 420 330" preserveAspectRatio="none">
             <path d="M 34 48 C 126 16, 142 128, 224 104 S 386 78, 350 160 C 312 248, 174 174, 108 258 C 70 306, 244 318, 378 282"></path>
           </svg>
-          <div class="flag-node node-1">01</div>
-          <div class="flag-node node-2">02</div>
-          <div class="flag-node node-3">03</div>
-          <div class="flag-node node-4">04</div>
+          <div class="flag-node node-1" data-map-node="lvl-1">01</div>
+          <div class="flag-node node-2" data-map-node="lvl-2">02</div>
+          <div class="flag-node node-3" data-map-node="lvl-3">03</div>
+          <div class="flag-node node-4" data-map-node="lvl-4">04</div>
+          <div class="flag-node node-5" data-map-node="lvl-5">05</div>
+        </div>
+        <div class="treasure-status">
+          <span id="treasureStatus">Vault sealed: capture all 5 flags.</span>
+          <strong id="treasurePercent">0%</strong>
         </div>
       </aside>
     </section>
