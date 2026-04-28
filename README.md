@@ -1,11 +1,12 @@
 # FlagFall
 
-FlagFall is a beginner-friendly cybersecurity treasure hunt game for students learning CTF basics.
+FlagFall is a beginner-friendly React cybersecurity treasure hunt game for students learning CTF basics.
 
 Players search for flags instead of coins, submit each flag, earn points, and pass levels.
 
 ## Features
 
+- React-based game flow inspired by a CTF challenge card
 - Eye-gaze guide whose pupils follow the cursor
 - Treasure map with 5 flag checkpoints
 - Live score, rank, solved count, and vault progress
@@ -14,16 +15,21 @@ Players search for flags instead of coins, submit each flag, earn points, and pa
 
 ## Project Structure
 
-- `index.html` - main game page
-- `css/styles.css` - visual design and responsive layout
-- `js/game.js` - challenge data, scoring, hints, and progress logic
-- `package.json` - optional scripts for local serving and JS validation
+- `index.html` - Vite entry page
+- `src/main.jsx` - React app bootstrap
+- `src/App.jsx` - game levels, scoring, eye gaze, and treasure map logic
+- `src/styles.css` - visual design and responsive layout
+- `package.json` - React/Vite scripts and dependencies
 
 ## How to Play
 
-Open `index.html` in a browser and click **Start Hunting**.
+Install dependencies:
 
-You can also run a local server:
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm start
@@ -45,12 +51,12 @@ Each level includes:
 
 ## Starter Levels
 
-- Warmup flag format
-- HTML source inspection
-- Caesar cipher
+- Source code inspection
 - Base64 decoding
-- DOM inspection
+- Robots clue discovery
+- Caesar cipher
+- DOM/data attribute inspection
 
 ## Notes
 
-This is a front-end learning prototype. The flags are intentionally discoverable in the page because the goal is teaching CTF basics. For a real competition, move flag validation to a backend server.
+This is a front-end learning prototype. The flags are intentionally discoverable in the React source because the goal is teaching CTF basics. For a real competition, move flag validation to a backend server.
