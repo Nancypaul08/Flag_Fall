@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /treasure-vault
+
+# Beginner CTF clue:
+# FLAG{robots_found}

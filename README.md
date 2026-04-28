@@ -7,6 +7,7 @@ Players search for flags instead of coins, submit each flag, earn points, and pa
 ## Features
 
 - React-based game flow inspired by a CTF challenge card
+- Express and MongoDB backend for users, login, progress, challenges, hints, and leaderboard
 - Eye-gaze guide whose pupils follow the cursor
 - Treasure map with 5 flag checkpoints
 - Live score, rank, solved count, and vault progress
@@ -19,6 +20,9 @@ Players search for flags instead of coins, submit each flag, earn points, and pa
 - `src/main.jsx` - React app bootstrap
 - `src/App.jsx` - game levels, scoring, eye gaze, and treasure map logic
 - `src/styles.css` - visual design and responsive layout
+- `server/index.cjs` - Express, MongoDB, JWT auth, progress, challenges, and leaderboard API
+- `public/robots.txt` - beginner CTF robots clue
+- `.env.example` - backend environment variable template
 - `package.json` - React/Vite scripts and dependencies
 
 ## How to Play
@@ -40,6 +44,31 @@ Then open:
 ```text
 http://localhost:5173
 ```
+
+## Backend API
+
+Start MongoDB locally, copy `.env.example` to `.env`, update `JWT_SECRET`, then run:
+
+```bash
+npm run server
+```
+
+The API runs on:
+
+```text
+http://localhost:5000
+```
+
+Useful routes:
+
+- `POST /api/register`
+- `POST /api/login`
+- `GET /api/challenges`
+- `GET /api/challenge/:level`
+- `POST /api/submit-flag`
+- `GET /api/hint/:level`
+- `GET /api/leaderboard`
+- `GET /api/me`
 
 Each level includes:
 
