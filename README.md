@@ -4,9 +4,28 @@ FlagFall is a beginner-friendly cybersecurity treasure hunt game for students le
 
 Players search for flags instead of coins, submit each flag, earn points, and pass levels.
 
+## Project Structure
+
+- `index.html` - main game page
+- `css/styles.css` - visual design and responsive layout
+- `js/game.js` - challenge data, scoring, hints, and progress logic
+- `package.json` - optional scripts for local serving and JS validation
+
 ## How to Play
 
 Open `index.html` in a browser and click **Start Hunting**.
+
+You can also run a local server:
+
+```bash
+npm start
+```
+
+Then open:
+
+```text
+http://localhost:5173
+```
 
 Each level includes:
 
